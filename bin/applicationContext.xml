@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+                
+      <bean id= "e" class= "DependencyInjection.Employee">
+      	<constructor-arg value= "10" type= "int"></constructor-arg>
+      	<constructor-arg value= "varma" ></constructor-arg>
+      	<constructor-arg>
+      		<ref bean= "a"/>
+      	</constructor-arg>
+      </bean>
+      
+      <bean id = "a" class= "DependencyInjection.Address">
+      	<constructor-arg value = "vizag"></constructor-arg>
+      	<constructor-arg value = "andhra"></constructor-arg>
+      	<constructor-arg value = "india"></constructor-arg>
+      </bean>
+      
+      
+      
+      <bean id = "emp" class= "DependencyInjection.Question">
+    	<constructor-arg value = "20" type= "int"></constructor-arg>
+    	<constructor-arg value = "alluri"></constructor-arg>
+    	<constructor-arg>
+    		<list>
+    			<ref bean= "add1" />
+    			<ref bean= "add2" />
+    		</list>
+    	</constructor-arg>
+    </bean>
+    
+    <bean id= "add1" class= "DependencyInjection.Answer">
+    	<constructor-arg value= "1"></constructor-arg>
+    	<constructor-arg value= "telangana"></constructor-arg>
+   		<constructor-arg value = "india"></constructor-arg>
+    </bean>
+    
+    <bean id= "add2" class= "DependencyInjection.Answer">
+    	<constructor-arg value= "2"></constructor-arg>
+    	<constructor-arg value= "ap"></constructor-arg>
+   		<constructor-arg value = "india"></constructor-arg>
+    </bean>
+
+</beans>
